@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Juliet Cars</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+  <h1>Juliet Cars</h1>
+  <a href="inventory.html">View Cars</a>
+</header>
+
+<section class="hero">
+  <h2>Find Your Next Car Today</h2>
+  <p>Financing available. Fast approval. Certified vehicles.</p>
+
+  <a class="cta" href="inventory.html">Browse Inventory</a>
+</section>
+
+<section class="trust">
+  <div>✔ Financing Available</div>
+  <div>✔ Warranty Included</div>
+  <div>✔ Verified Vehicles</div>
+</section>
+
+</body>
+</html>
