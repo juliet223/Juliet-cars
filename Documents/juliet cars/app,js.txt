@@ -1,0 +1,61 @@
+const SUPABASE_URL = "YOUR_SUPABASE_URL";
+const SUPABASE_KEY = "YOUR_SUPABASE_KEY";
+
+/* -------------------------
+   LOAD INVENTORY
+------------------------- */
+fetch(`${SUPABASE_URL}/rest/v1/cars`, {
+  headers: {
+    apikey: SUPABASE_KEY,
+    Authorization: `Bearer ${SUPABASE_KEY}`
+  }
+})
+.then(res => res.json())
+.then(cars => {
+  const container = document.getElementById("cars");
+
+  cars.forEach(car => {
+    const div = document.createElement("div");
+    div.className = "car";
+
+    div.innerHTML = `
+      <h3>${car.make} ${car.model}</h3>
+      <p>${car.year} • €${car.price}</p>
+      <a href="car.html?id=${car.id}">View Deal</a>
+    `;
+
+    container.appendChild(div);
+  });
+});
+
+
+/* -------------------------
+   LEAD CAPTURE
+------------------------- */
+const form = document.querySelector("form");
+
+if (form) {
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    const lead = {
+      name: e.target[0].value,
+      phone: e.target[1].value,
+      budget: e.target[2].value,
+      intent: e.target[3].value,
+      source: "website"
+    };
+
+    await fetch(`${SUPABASE_URL}/rest/v1/leads`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        apikey: SUPABASE_KEY,
+        Authorization: `Bearer ${SUPABASE_KEY}`
+      },
+      body: JSON.stringify(lead)
+    });
+
+    alert("We will contact you shortly 🚗");
+  });
+}

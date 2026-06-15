@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Car Details - Juliet Cars</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+  <h1>Juliet Cars</h1>
+</header>
+
+<section>
+  <h2 id="car-title">Loading...</h2>
+  <p>Financing available from low monthly payments</p>
+</section>
+
+<section class="offer">
+  <h3>Limited Offer</h3>
+  <p>Fast approval within minutes</p>
+</section>
+
+<section id="lead">
+  <h3>Get Offer</h3>
+
+  <form>
+    <input placeholder="Name" required>
+    <input placeholder="Phone" required>
+    <input placeholder="Budget" required>
+
+    <select>
+      <option>Financing</option>
+      <option>Cash</option>
+      <option>Trade-in</option>
+    </select>
+
+    <button type="submit">Request Offer</button>
+  </form>
+</section>
+
+<!-- WhatsApp fallback -->
+<a href="https://wa.me/YOUR_NUMBER?text=Hi%20Juliet%20Cars%2C%20I%20am%20interested%20in%20a%20car"
+   class="whatsapp">
+   Chat on WhatsApp 🚗
+</a>
+
+<script src="app.js"></script>
+
+</body>
+</html>
